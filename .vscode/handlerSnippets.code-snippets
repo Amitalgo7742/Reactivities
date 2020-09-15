@@ -1,0 +1,24 @@
+{
+	"Query Handler": {
+		"prefix": "qhandler",
+		"body": [
+		  " public class Query : IRequest<${1:ReturnObject}> { ",
+		  "              public Guid Id { get; set; }",
+		  "         }",
+		  "         public class Handler : IRequestHandler<Query, ${1:ReturnObject}>",
+		  "        {",
+		  "            private readonly DataContext _context;",
+		  "            public Handler(DataContext context)",
+		  "            {",
+		  "                this._context = context;",
+		  "            }",
+		  "",
+		  "            public async Task<${1:ReturnObject}> Handle(Query request, CancellationToken cancellationToken)",
+		  "            {",
+		  "                //code handler goes here",
+		  "            }",
+		  "        }"
+		],
+		"description": "Query Handler"
+	  }
+}
